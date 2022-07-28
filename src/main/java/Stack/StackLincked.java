@@ -6,7 +6,11 @@ public class StackLincked {
 	
 	public static boolean isValid(String s) {
 		Stack<Character> leftSymbols = new Stack<Character>();
-        for (char c : s.toCharArray()) {
+        
+		for(int i=0;i<s.length(); i++) {
+			
+			Character c=s.charAt(i);
+		
         	if (c == '(' || c == '{' || c == '[') {
                 leftSymbols.push(c);
             }
@@ -33,7 +37,7 @@ public class StackLincked {
 		// TODO Auto-generated method stub
     	
     	
-    	String s = "{(}[])";
+    	String s = "{()[]}";
         boolean check = isValid(s);
             if(check){
                   System.out.println("true");
