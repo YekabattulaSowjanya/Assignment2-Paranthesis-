@@ -34,7 +34,7 @@ public class MinStack {
 		{
 			if(top==null)
 			{
-			   throw new EmptyStackException();
+			   top.getData();                               // throw new EmptyStackException();
 			}
 			return top.getData();
 		}
@@ -52,8 +52,15 @@ public class MinStack {
 	    	}
 	    	return size;
 	    }
+	    public boolean isEmpty()
+	      {
+	    	  if(top!=null)
+	    		  return false;
+	    	return true;
+	      }
+
 	    
-		public void display() 
+	/*	public void display() 
 		{
 			Node node = top;
 			while(node!=null)
@@ -67,15 +74,9 @@ public class MinStack {
 	      {
 	    	  return size;
 	      }
-	         
-	      public boolean isEmpty()
-	      {
-	    	  if(top!=null)
-	    		  return false;
-	    	return true;
-	      }
-
-		
+          	         
+	      
+		*/
 
 		
 	}

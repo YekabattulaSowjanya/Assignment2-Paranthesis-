@@ -3,31 +3,71 @@ import static org.junit.Assert.*;
 import org.junit.Test;
 
 import Stack.MinStack;
-import Stack.StackLincked;
+import Stack.BalancingString;
 
 public class AppTest {
 
 	
-	StackLincked sl = new StackLincked();
-	MinStack stack = new MinStack();
+	BalancingString sl = new BalancingString();
+	
 	
 
 		@Test
 		public void  When_StringHasSameSetOfOpenAndCloseBrackets_Expect_true()
 		{
-			String input = "()";
+			String input = "({[]{}()})";
 			
 			
 			assertEquals(true,sl.isValid(input));
 		}
 	
 		
-		@Test
+	    @Test
 		public void When_StringhasDifferentSetOfOpenAndCloseBrackets_Expect_true()
 		{
 			String input = "(][){}";
 			
 			assertEquals(false,sl.isValid(input));
+		}
+	
+		
+		@Test
+		public void  When_StringHasdifferentSetofOpenAndCloseBrackets_Expect_true()
+		{
+			String input = "{[()}";
+			
+			
+			assertEquals(false,sl.isValid(input));
+		}
+	
+		
+		@Test
+		public void  When_StringHasdifferentSetOfOpenandCloseBrackets_Expect_true()
+		{
+			String input = "{[(])";
+			
+			
+			assertEquals(false,sl.isValid(input));
+		}
+	
+		
+		@Test
+		public void  When_StringHasDifferentsetOfOpenAndCloseBrackets_Expect_true()
+		{
+			String input = "(){}][";
+			
+			
+			assertEquals(false,sl.isValid(input));
+		}
+	
+		
+		@Test
+		public void   When_StringHasSameSetOfOpenAndCloseBrackets_Expect_True()
+		{
+			String input = "{{}[]()[()]}";
+			
+			
+			assertEquals(true,sl.isValid(input));
 		}
 	
 	
